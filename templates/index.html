@@ -3,14 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Check Broken Links and Images</title>
+    <link href="style.css">
+    <title>Broken Image Checker</title>
 </head>
-<body>
-    <h1>Check Broken Links and Images</h1>
-    <form action="/check" method="post">
-        <label for="url">Enter Website URL:</label><br>
-        <input type="url" id="url" name="url" placeholder="https://example.com" required><br><br>
+<body style="">
+    <h1>Check for Broken Images</h1>
+    <form action="/check_broken_images" method="POST">
+        <label for="website_url">Enter Website URL:</label>
+        <input type="text" id="website_url" name="website_url" required>
         <button type="submit">Check</button>
     </form>
 </body>
 </html>
+

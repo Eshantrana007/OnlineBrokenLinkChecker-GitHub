@@ -22,7 +22,7 @@ def check_broken_images():
 
 def run_robot_script(url):
     # Run the Robot Framework script through subprocess
-    command = f"robot --variable URL:{url} your_script.robot"
+    command = f"robot --variable URL:{url} broken_image.robot"
     process = subprocess.Popen(command, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
     stdout, stderr = process.communicate()
 
@@ -34,4 +34,5 @@ def run_robot_script(url):
 
 
 if __name__ == "__main__":
+    app.run(host='192.168.1.72', port=5000, debug=True, threaded=False)
     app.run(debug=True)

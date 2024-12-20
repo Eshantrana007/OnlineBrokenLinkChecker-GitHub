@@ -1,146 +1,67 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 6.1.1 (Python 3.12.1 on darwin)" generated="20241219 19:06:17.337" rpa="false" schemaversion="4">
+<robot generator="Robot 6.1.1 (Python 3.12.1 on darwin)" generated="20241220 15:56:28.083" rpa="false" schemaversion="4">
 <suite id="s1" name="Broken Image" source="/Users/eshant/PycharmProjects/OnlineBrokenLinkChecker-GitHub/broken_image.robot">
-<test id="s1-t1" name="Check For Broken Images" line="11">
+<test id="s1-t1" name="Check For Broken Images" line="10">
 <kw name="Open Browser" library="SeleniumLibrary">
 <arg>${URL}</arg>
 <arg>${browser}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20241219 19:06:17.448" level="INFO">Opening browser 'Chrome' to base url 'https://practice.expandtesting.com/broken-images'.</msg>
-<status status="PASS" starttime="20241219 19:06:17.448" endtime="20241219 19:06:21.894"/>
+<msg timestamp="20241220 15:56:28.190" level="INFO">Opening browser 'Chrome' to base url 'gufyc'.</msg>
+<msg timestamp="20241220 15:56:30.021" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-1.png"&gt;&lt;img src="selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20241220 15:56:30.021" level="FAIL">InvalidArgumentException: Message: invalid argument
+  (Session info: chrome=131.0.6778.205)
+Stacktrace:
+0   chromedriver                        0x00000001033bb184 cxxbridge1$str$ptr + 3626716
+1   chromedriver                        0x00000001033b39d4 cxxbridge1$str$ptr + 3596076
+2   chromedriver                        0x0000000102e207d8 cxxbridge1$string$len + 88828
+3   chromedriver                        0x0000000102e0b4d8 cxxbridge1$string$len + 2044
+4   chromedriver                        0x0000000102e0a1ac core::str::slice_error_fail::ha0e52dbcb60e6bae + 61996
+5   chromedriver                        0x0000000102e0a2c4 core::str::slice_error_fail::ha0e52dbcb60e6bae + 62276
+6   chromedriver                        0x0000000102e22e6c cxxbridge1$string$len + 98704
+7   chromedriver                        0x0000000102e9eb58 cxxbridge1$string$len + 605820
+8   chromedriver                        0x0000000102e9e5b4 cxxbridge1$string$len + 604376
+9   chromedriver                        0x0000000102e59568 cxxbridge1$string$len + 321676
+10  chromedriver                        0x0000000102e5a1b8 cxxbridge1$string$len + 324828
+11  chromedriver                        0x00000001033869ac cxxbridge1$str$ptr + 3411716
+12  chromedriver                        0x0000000103389ccc cxxbridge1$str$ptr + 3424804
+13  chromedriver                        0x000000010336d86c cxxbridge1$str$ptr + 3308996
+14  chromedriver                        0x000000010338a58c cxxbridge1$str$ptr + 3427044
+15  chromedriver                        0x000000010335f09c cxxbridge1$str$ptr + 3249652
+16  chromedriver                        0x00000001033a44b8 cxxbridge1$str$ptr + 3533328
+17  chromedriver                        0x00000001033a4634 cxxbridge1$str$ptr + 3533708
+18  chromedriver                        0x00000001033b3648 cxxbridge1$str$ptr + 3595168
+19  libsystem_pthread.dylib             0x00000001958982e4 _pthread_start + 136
+20  libsystem_pthread.dylib             0x00000001958930fc thread_start + 8
+</msg>
+<status status="FAIL" starttime="20241220 15:56:28.190" endtime="20241220 15:56:30.024"/>
 </kw>
 <kw name="Get WebElements" library="SeleniumLibrary">
 <var>${images}</var>
 <arg>xpath://img</arg>
 <doc>Returns a list of WebElement objects matching the ``locator``.</doc>
-<msg timestamp="20241219 19:06:21.905" level="INFO">${images} = [&lt;selenium.webdriver.remote.webelement.WebElement (session="e38eca91fcecda7edeb8b91cd29be0d2", element="f.4FE538D19817585743CB52E64E980397.d.7584E1465D56E59C08A33C5A90C66ED7.e.7")&gt;, &lt;selenium.webdrive...</msg>
-<status status="PASS" starttime="20241219 19:06:21.895" endtime="20241219 19:06:21.905"/>
+<status status="NOT RUN" starttime="20241220 15:56:30.024" endtime="20241220 15:56:30.024"/>
 </kw>
 <kw name="Create List" library="BuiltIn">
 <var>${broken_images}</var>
 <doc>Returns a list containing given items.</doc>
-<msg timestamp="20241219 19:06:21.906" level="INFO">${broken_images} = []</msg>
-<status status="PASS" starttime="20241219 19:06:21.905" endtime="20241219 19:06:21.906"/>
+<status status="NOT RUN" starttime="20241220 15:56:30.024" endtime="20241220 15:56:30.024"/>
 </kw>
 <for flavor="IN">
 <var>${image}</var>
 <value>@{images}</value>
 <iter>
-<var name="${image}">&lt;selenium.webdriver.remote.webelement.WebElement (session="e38eca91fcecda7edeb8b91cd29be0d2", element="f.4FE538D19817585743CB52E64E980397.d.7584E1465D56E59C08A33C5A90C66ED7.e.7")&gt;</var>
+<var name="${image}"/>
 <kw name="Get Element Attribute" library="SeleniumLibrary">
 <var>${src}</var>
 <arg>${image}</arg>
 <arg>src</arg>
 <doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
-<msg timestamp="20241219 19:06:21.915" level="INFO">${src} = https://practice.expandtesting.com/assets/images/logo.svg</msg>
-<status status="PASS" starttime="20241219 19:06:21.906" endtime="20241219 19:06:21.915"/>
+<status status="NOT RUN" starttime="20241220 15:56:30.025" endtime="20241220 15:56:30.025"/>
 </kw>
 <kw name="Get Image Status Code">
 <var>${status_code}</var>
 <arg>${src}</arg>
-<kw name="Run Keyword And Ignore Error" library="BuiltIn">
-<var>${response}</var>
-<arg>GET</arg>
-<arg>${url}</arg>
-<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
-<kw name="GET" library="RequestsLibrary">
-<arg>${url}</arg>
-<doc>Sends a GET request.</doc>
-<msg timestamp="20241219 19:06:22.997" level="INFO">GET Request : url=https://practice.expandtesting.com/assets/images/logo.svg 
- path_url=/assets/images/logo.svg 
- headers={'User-Agent': 'python-requests/2.22.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
- body=None 
- </msg>
-<msg timestamp="20241219 19:06:22.997" level="INFO">GET Response : url=https://practice.expandtesting.com/assets/images/logo.svg 
- status=200, reason=OK 
- headers={'accept-ranges': 'bytes', 'cache-control': 'public, max-age=0', 'last-modified': 'Tue, 10 Dec 2024 16:37:18 GMT', 'etag': 'W/"84c-193b16ea230"', 'content-type': 'image/svg+xml', 'content-encoding': 'gzip', 'date': 'Thu, 19 Dec 2024 13:36:22 GMT', 'connection': 'keep-alive', 'keep-alive': 'timeout=5', 'transfer-encoding': 'chunked'} 
- body=&lt;?xml version="1.0" encoding="UTF-8" standalone="no"?&gt;
-&lt;svg
-   width="16"
-   height="16"
-   fill="currentColor"
-   class="bi bi-robot"
-   viewBox="0 0 16 16"
-   version="1.1"
-   id="svg6"
-   sodipodi:docname="robot.svg"
-   inkscape:version="1.2.1 (9c6d41e410, 2022-07-14)"
-   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
-   xmlns="http://www.w3.org/2000/svg"
-   xmlns:svg="http://www.w3.org/2000/svg"&gt;
-  &lt;defs
-     id="defs10" /&gt;
-  &lt;sodipodi:namedview
-     id="namedview8"
-     pagecolor="#ffffff"
-     bordercolor="#000000"
-     borderopacity="0.25"
-     inkscape:showpageshadow="2"
-     inkscape:pageopacity="0.0"
-     inkscape:pagecheckerboard="0"
-     inkscape:deskcolor="#d1d1d1"
-     showgrid="false"
-     inkscape:zoom="52.6875"
-     inkscape:cx="6.405694"
-     inkscape:cy="14.092527"
-     inkscape:window-width="1920"
-     inkscape:window-height="1001"
-     inkscape:window-x="1341"
-     inkscape:window-y="261"
-     inkscape:window-maximized="1"
-     inkscape:current-layer="svg6" /&gt;
-  &lt;path
-     d="M6 12.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5ZM3 8.062C3 6.76 4.235 5.765 5.53 5.886a26.58 26.58 0 0 0 4.94 0C11.765 5.765 13 6.76 13 8.062v1.157a.933.933 0 0 1-.765.935c-.845.147-2.34.346-4.235.346-1.895 0-3.39-.2-4.235-.346A.933.933 0 0 1 3 9.219V8.062Zm4.542-.827a.25.25 0 0 0-.217.068l-.92.9a24.767 24.767 0 0 1-1.871-.183.25.25 0 0 0-.068.495c.55.076 1.232.149 2.02.193a.25.25 0 0 0 .189-.071l.754-.736.847 1.71a.25.25 0 0 0 .404.062l.932-.97a25.286 25.286 0 0 0 1.922-.188.25.25 0 0 0-.068-.495c-.538.074-1.207.145-1.98.189a.25.25 0 0 0-.166.076l-.754.785-.842-1.7a.25.25 0 0 0-.182-.135Z"
-     id="path2"
-     style="fill:#ec7211;fill-opacity:1" /&gt;
-  &lt;path
-     d="M8.5 1.866a1 1 0 1 0-1 0V3h-2A4.5 4.5 0 0 0 1 7.5V8a1 1 0 0 0-1 1v2a1 1 0 0 0 1 1v1a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-1a1 1 0 0 0 1-1V9a1 1 0 0 0-1-1v-.5A4.5 4.5 0 0 0 10.5 3h-2V1.866ZM14 7.5V13a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V7.5A3.5 3.5 0 0 1 5.5 4h5A3.5 3.5 0 0 1 14 7.5Z"
-     id="path4"
-     style="fill:#ec7211;fill-opacity:1" /&gt;
-&lt;/svg&gt;
- 
- </msg>
-<status status="PASS" starttime="20241219 19:06:21.916" endtime="20241219 19:06:22.997"/>
-</kw>
-<msg timestamp="20241219 19:06:22.997" level="INFO">${response} = ('PASS', &lt;Response [200]&gt;)</msg>
-<status status="PASS" starttime="20241219 19:06:21.915" endtime="20241219 19:06:22.997"/>
-</kw>
-<kw name="Set Variable" library="BuiltIn">
-<var>${status}</var>
-<arg>${response}[0]</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20241219 19:06:22.997" level="INFO">${status} = PASS</msg>
-<status status="PASS" starttime="20241219 19:06:22.997" endtime="20241219 19:06:22.997"/>
-</kw>
-<if>
-<branch type="IF" condition="'${status}' == 'FAIL'">
-<kw name="Set Variable" library="BuiltIn">
-<var>${code}</var>
-<arg>404</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="NOT RUN" starttime="20241219 19:06:22.998" endtime="20241219 19:06:22.998"/>
-</kw>
-<status status="NOT RUN" starttime="20241219 19:06:22.998" endtime="20241219 19:06:22.998"/>
-</branch>
-<branch type="ELSE">
-<kw name="Set Variable" library="BuiltIn">
-<var>${code}</var>
-<arg>${response[1].status_code}</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20241219 19:06:22.998" level="INFO">${code} = 200</msg>
-<status status="PASS" starttime="20241219 19:06:22.998" endtime="20241219 19:06:22.998"/>
-</kw>
-<status status="PASS" starttime="20241219 19:06:22.998" endtime="20241219 19:06:22.998"/>
-</branch>
-<status status="PASS" starttime="20241219 19:06:22.998" endtime="20241219 19:06:22.998"/>
-</if>
-<return>
-<value>${code}</value>
-<status status="PASS" starttime="20241219 19:06:22.998" endtime="20241219 19:06:22.998"/>
-</return>
-<msg timestamp="20241219 19:06:22.998" level="INFO">${status_code} = 200</msg>
-<status status="PASS" starttime="20241219 19:06:21.915" endtime="20241219 19:06:22.998"/>
+<status status="NOT RUN" starttime="20241220 15:56:30.025" endtime="20241220 15:56:30.025"/>
 </kw>
 <kw name="Run Keyword If" library="BuiltIn">
 <arg>${status_code} != ${200}</arg>
@@ -148,864 +69,91 @@
 <arg>${broken_images}</arg>
 <arg>${src}</arg>
 <doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
-<status status="PASS" starttime="20241219 19:06:22.998" endtime="20241219 19:06:22.998"/>
+<status status="NOT RUN" starttime="20241220 15:56:30.025" endtime="20241220 15:56:30.025"/>
 </kw>
-<status status="PASS" starttime="20241219 19:06:21.906" endtime="20241219 19:06:22.998"/>
+<status status="NOT RUN" starttime="20241220 15:56:30.025" endtime="20241220 15:56:30.025"/>
 </iter>
-<iter>
-<var name="${image}">&lt;selenium.webdriver.remote.webelement.WebElement (session="e38eca91fcecda7edeb8b91cd29be0d2", element="f.4FE538D19817585743CB52E64E980397.d.7584E1465D56E59C08A33C5A90C66ED7.e.10")&gt;</var>
-<kw name="Get Element Attribute" library="SeleniumLibrary">
-<var>${src}</var>
-<arg>${image}</arg>
-<arg>src</arg>
-<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
-<msg timestamp="20241219 19:06:23.006" level="INFO">${src} = https://practice.expandtesting.com/asdf.jpg</msg>
-<status status="PASS" starttime="20241219 19:06:22.998" endtime="20241219 19:06:23.006"/>
-</kw>
-<kw name="Get Image Status Code">
-<var>${status_code}</var>
-<arg>${src}</arg>
-<kw name="Run Keyword And Ignore Error" library="BuiltIn">
-<var>${response}</var>
-<arg>GET</arg>
-<arg>${url}</arg>
-<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
-<kw name="GET" library="RequestsLibrary">
-<arg>${url}</arg>
-<doc>Sends a GET request.</doc>
-<msg timestamp="20241219 19:06:23.665" level="INFO">GET Request : url=https://practice.expandtesting.com/asdf.jpg 
- path_url=/asdf.jpg 
- headers={'User-Agent': 'python-requests/2.22.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
- body=None 
- </msg>
-<msg timestamp="20241219 19:06:23.665" level="INFO">GET Response : url=https://practice.expandtesting.com/asdf.jpg 
- status=404, reason=Not Found 
- headers={'access-control-allow-origin': '*', 'access-control-allow-credentials': 'true', 'access-control-allow-methods': 'GET, POST, PUT, DELETE, PATCH', 'access-control-allow-headers': 'Origin, X-Requested-With, Authorization, Content-Type, Accept, X-Auth-Token', 'content-type': 'text/html; charset=utf-8', 'content-encoding': 'gzip', 'etag': 'W/"66fd-KwETaSZHKa3U7YO5VAiBpzAmm8w"', 'set-cookie': 'express:sess=eyJmbGFzaCI6e319; path=/; httponly, express:sess.sig=tdt42nQZiQvICqmrvHQ1_16fHk0; path=/; httponly', 'date': 'Thu, 19 Dec 2024 13:36:23 GMT', 'connection': 'keep-alive', 'keep-alive': 'timeout=5', 'transfer-encoding': 'chunked'} 
- body=&lt;!doctype html&gt;
-&lt;html lang="en"&gt;
-
-&lt;head&gt;
-	&lt;meta charset="utf-8"&gt;
-	&lt;meta name=viewport content="width=device-width,initial-scale=1"&gt;
-	&lt;title&gt;404 Page Not Found&lt;/title&gt;
-	&lt;meta name="description"
-		content="Practice Test Automation Website | Free Web UI and REST API Examples"&gt;
-
-	&lt;meta property="og:locale" content="en_US"&gt;
-
-	&lt;meta name="google-adsense-account" content="ca-pub-1056034821646296"&gt;
-	&lt;meta name="msvalidate.01" content="C7DB002AC3EF3CA1AFB65068DA704F2B" /&gt;
-
-	&lt;meta property="og:type" content="article" /&gt;
-	&lt;link rel="canonical" href="https://practice.expandtesting.com/asdf.jpg" /&gt;
-
-	&lt;meta property="og:title" content="404 Page Not Found"&gt;
-
-
-
-
-	&lt;link rel='shortcut icon' , href='/assets/images/favicon.png' type="image/png"&gt;
-	&lt;link rel="apple-touch-icon" href="/apple-touch-icon.png"&gt;
-
-	&lt;link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"&gt;
-	&lt;link rel='stylesheet' , href='/assets/css/main.css?v=602b88ae'&gt;
-
-	&lt;script src="https://code.jquery.com/jquery-3.6.3.min.js"&gt;&lt;/script&gt;
-	&lt;script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"&gt;&lt;/script&gt;
-	&lt;script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-		crossorigin="anonymous"&gt;&lt;/script&gt;
-
-
-	&lt;!-- Global site tag (gtag.js) - Google Analytics --&gt;
-	&lt;script async src="https://www.googletagmanager.com/gtag/js?id=G-90GRT6N40B"&gt;&lt;/script&gt;
-
-	&lt;script&gt;
-		window.dataLayer = window.dataLayer || [];
-		function gtag() { dataLayer.push(arguments); }
-		gtag('js', new Date());
-		gtag('config', 'G-90GRT6N40B');
-	&lt;/script&gt;
-
-	&lt;!-- Google Ads --&gt;
-
-	&lt;script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1056034821646296"
-		crossorigin="anonymous"&gt;&lt;/script&gt;
-
-
-
-
-	&lt;script type="application/ld+json"&gt;
-		{
-			"@context": "https://schema.org",
-			"@type": "WebPage",
-			"name":  "404 Page Not Found",
-			"inLanguage":"en-US",
-			"url": "https://practice.expandtesting.com/asdf.jpg",
-			"description": "Practice Test Automation Website | Free Web UI and REST API Examples"
-		}
-	&lt;/script&gt;
-
-
-
-
-&lt;/head&gt;
-
-&lt;body class="d-flex flex-column min-vh-100"&gt;
-
-	
-	&lt;div class="ad-bar"&gt;
-	
-	
-	  &lt;p class="text-center ad-bar-text me-1 ms-1"&gt; The &lt;a href="https://mailstack.expandtesting.com/"&gt;MailStack&lt;/a&gt; Api
-	    (Email Testing) is now available!
-	  &lt;/p&gt;
-	
-	&lt;/div&gt;
-	
-	&lt;div class="horizontal-divider" &lt;/div&gt;&lt;/div&gt;
-	
-	
-	
-	&lt;header class="navbar navbar-expand-md navbar-dark sticky-top main-navbar"&gt;
-	  &lt;nav class="container flex-wrap flex-md-nowrap" aria-label="Main navigation"&gt;
-	    &lt;a class="navbar-brand p-0 me-2 logo_title" href="/" aria-label="SUT"&gt;
-	      &lt;img src="/assets/images/logo.svg"
-	        alt="Best Website for Practice Automation Testing: Free UI and REST API Examples and Apps. Using Cypress, Playwright, Selenium, WebdriverIO and Postman."
-	        width="45" height="45" class="d-block my-1" role="img" /&gt;
-	      &lt;title&gt;SUT&lt;/title&gt;&amp;nbsp;Practice
-	    &lt;/a&gt;
-	
-	    &lt;button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#main-navbar"
-	      aria-controls="main-navbar" aria-expanded="false" aria-label="Toggle navigation"&gt;
-	      &lt;svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" class="bi" fill="currentColor" viewBox="0 0 16 16"&gt;
-	        &lt;path fill-rule="evenodd"
-	          d="M2.5 11.5A.5.5 0 0 1 3 11h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 3 7h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 3 3h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"&gt;
-	        &lt;/path&gt;
-	      &lt;/svg&gt;
-	    &lt;/button&gt;
-	
-	
-	    &lt;div class="navbar-collapse collapse" id="main-navbar"&gt;
-	      &lt;ul class="navbar-nav flex-row flex-wrap pt-2 py-md-0"&gt;
-	
-	
-	
-	        &lt;li class="nav-item dropdown col-6 col-md-auto"&gt;
-	          &lt;a class="nav-link dropdown-toggle" href="/#examples" id="examples-dropdown" role="button"
-	            data-bs-toggle="dropdown" aria-expanded="false"&gt;Demos&lt;/a&gt;
-	          &lt;ul class="dropdown-menu" aria-labelledby="examples-dropdown"&gt;
-	            &lt;li&gt;
-	              &lt;a class="dropdown-item" href="/#examples"&gt;Examples&lt;/a&gt;
-	            &lt;/li&gt;
-	            &lt;li&gt;
-	              &lt;hr class="dropdown-divider"&gt;
-	            &lt;li&gt;
-	              &lt;a class="dropdown-item" href="/#apps"&gt;Apps&lt;/a&gt;
-	            &lt;/li&gt;
-	            &lt;li&gt;
-	              &lt;hr class="dropdown-divider"&gt;
-	            &lt;/li&gt;
-	            &lt;li&gt;&lt;a class="dropdown-item" href="/#api"&gt;APIs&lt;/a&gt;&lt;/li&gt;
-	
-	            &lt;li&gt;
-	              &lt;hr class="dropdown-divider"&gt;
-	            &lt;/li&gt;
-	            &lt;li&gt;&lt;a class="dropdown-item" href="/#assertions"&gt;Assertions&lt;/a&gt;&lt;/li&gt;
-	            &lt;li&gt;
-	              &lt;hr class="dropdown-divider"&gt;
-	            &lt;/li&gt;
-	            &lt;li&gt;&lt;a class="dropdown-item" href="/#reports"&gt;Reports&lt;/a&gt;&lt;/li&gt;
-	
-	          &lt;/ul&gt;
-	        &lt;/li&gt;
-	
-	
-	        &lt;li class="nav-item col-6 col-md-auto"&gt;
-	          &lt;a class="nav-link p-2" href="/#tools"&gt;Tools&lt;/a&gt;
-	        &lt;/li&gt;
-	
-	        &lt;li class=" nav-item col-6 col-md-auto"&gt;
-	          &lt;a class="nav-link p-2" href="/tips"&gt;Automation Tips&lt;/a&gt;
-	        &lt;/li&gt;
-	
-	        &lt;li class="nav-item col-6 col-md-auto"&gt;
-	          &lt;a class="nav-link p-2" href="/test-cases"&gt;Test Cases&lt;/a&gt;
-	        &lt;/li&gt;
-	
-	        &lt;li class="nav-item-border nav-item col-6 col-md-auto"&gt;
-	          &lt;a class="nav-link p-2" href="/notes/api/api-docs/"&gt;API Testing&lt;/a&gt;
-	        &lt;/li&gt;
-	
-	        &lt;li class="nav-item col-6 col-md-auto"&gt;
-	          &lt;a class="nav-link p-2" href="/about"&gt;About&lt;/a&gt;
-	        &lt;/li&gt;
-	
-	        &lt;li class="nav-item col-6 col-md-auto"&gt;
-	          &lt;a class="nav-link p-2" href="/contact"&gt;Contact&lt;/a&gt;
-	        &lt;/li&gt;
-	
-	      &lt;/ul&gt;
-	
-	      &lt;hr class="d-md-none text-white-50" /&gt;
-	
-	      &lt;ul class="navbar-nav flex-row flex-wrap ms-md-auto"&gt;
-	
-	      &lt;/ul&gt;
-	
-	      &lt;a class="btn btn-sut d-lg-inline-block my-2 my-md-0 ms-md-3"
-	        href="https://expandtesting.com/formations/"&gt;Automation Training&lt;/a&gt;
-	    &lt;/div&gt;
-	  &lt;/nav&gt;
-	
-	&lt;/header&gt;
-	&lt;main class="flex-shrink-0 py-3"&gt;
-
-
-		&lt;style&gt;
-		    ins.adsbygoogle[data-ad-status="unfilled"] {
-		        display: none !important;
-		    }
-		&lt;/style&gt;
-		
-		&lt;div class="container-fluid mt-1 mb-3"&gt;
-		    &lt;div class="row"&gt;
-		        &lt;div class="col-12 border"&gt;
-		            &lt;script async
-		                src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1056034821646296"
-		                crossorigin="anonymous"&gt;&lt;/script&gt;
-		            &lt;ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article"
-		                data-ad-format="fluid" data-ad-client="ca-pub-1056034821646296" data-ad-slot="4970212221"&gt;&lt;/ins&gt;
-		            &lt;script&gt;
-		                (adsbygoogle = window.adsbygoogle || []).push({});
-		            &lt;/script&gt;
-		
-		        &lt;/div&gt;
-		    &lt;/div&gt;
-		
-		&lt;/div&gt;
-		&lt;div class='page-layout'&gt;
-  &lt;div class='container'&gt;
-    &lt;div class='page-inner'&gt;
-      &lt;div class='not-available text-center mt-xl-5'&gt;
-        &lt;div class='clearfix fadeInDown animate mb-4'&gt;
-          &lt;svg
-            data-name='Layer 1'
-            width='270'
-            height='200'
-            viewBox='0 0 1097 810'
-            xmlns='http://www.w3.org/2000/svg'
-          &gt;&lt;defs&gt;&lt;linearGradient
-                id='a'
-                x1='588.67'
-                y1='838.15'
-                x2='588.67'
-                y2='115.47'
-                gradientUnits='userSpaceOnUse'
-              &gt;&lt;stop offset='0' stop-color='gray' stop-opacity='.25'&gt;&lt;/stop&gt;&lt;stop
-                  offset='.54'
-                  stop-color='gray'
-                  stop-opacity='.12'
-                &gt;&lt;/stop&gt;&lt;stop offset='1' stop-color='gray' stop-opacity='.1'&gt;&lt;/stop&gt;&lt;/linearGradient&gt;&lt;/defs&gt;&lt;path
-              d='M12.07 429.97c17.36 74.2 54.11 138.34 112.19 169.43 120.7 64.61 392.91 31.29 596.07-7a465.21 465.21 0 0 0 264.54-151.19z'
-              fill='currentcolor'
-              class='text-primary'
-              opacity='.1'
-            &gt;&lt;/path&gt;&lt;path
-              d='M799.31 649.72s-67.65 40.8 57.03 103.59c0 0 27.46-51-2.9-92.57a40.94 40.94 0 0 0-53.12-11.64z'
-              fill='currentcolor'
-              class='text-primary'
-            &gt;&lt;/path&gt;&lt;path
-              d='M800.09 648.86s57.88 44.28 56.25 104.45'
-              fill='none'
-              stroke='#535461'
-              stroke-miterlimit='10'
-            &gt;&lt;/path&gt;&lt;path
-              d='M18.31 661.72s-67.65 40.8 57.03 103.59c0 0 27.46-51-2.9-92.57a40.94 40.94 0 0 0-53.12-11.64z'
-              fill='currentcolor'
-              class='text-primary'
-            &gt;&lt;/path&gt;&lt;path
-              d='M19.09 660.86s57.88 44.28 56.25 104.45'
-              fill='none'
-              stroke='#535461'
-              stroke-miterlimit='10'
-            &gt;&lt;/path&gt;&lt;path
-              d='M859.66 759.08s-21.19-72 4-124.91a113.65 113.65 0 0 0 9.19-71.3 191.13 191.13 0 0 0-10.19-33.46'
-              fill='none'
-              stroke='#535461'
-              stroke-miterlimit='10'
-              stroke-width='2'
-            &gt;&lt;/path&gt;&lt;path
-              d='M878.35 495.95c0 8.82-16 34.39-16 34.39s-16-25.57-16-34.39a16 16 0 0 1 31.93 0zM904.74 544.79c-4.79 7.4-32.09 20.19-32.09 20.19s.5-30.14 5.29-37.54a16 16 0 0 1 26.8 17.36zM903.59 628.26c-7.87 4-37.89 1.23-37.89 1.23s15.64-25.77 23.52-29.74a16 16 0 0 1 14.38 28.51zM888.49 691.22c-7.09 5.24-37.14 7.61-37.14 7.61s11.06-28 18.15-33.29a16 16 0 0 1 19 25.67zM839.12 566.69c6.32 6.14 35.79 12.51 35.79 12.51s-7.22-29.27-13.54-35.41a16 16 0 0 0-22.25 22.9zM822.41 640.54c7.87 4 37.89 1.23 37.89 1.23s-15.64-25.77-23.52-29.74a16 16 0 1 0-14.38 28.51zM816.01 714.55c7.09 5.24 37.14 7.61 37.14 7.61s-11.06-28-18.15-33.29a16 16 0 1 0-19 25.67z'
-              fill='currentcolor'
-              class='text-primary'
-            &gt;&lt;/path&gt;&lt;path
-              d='M878.35 495.95c0 8.82-16 34.39-16 34.39s-16-25.57-16-34.39a16 16 0 0 1 31.93 0zM904.74 544.79c-4.79 7.4-32.09 20.19-32.09 20.19s.5-30.14 5.29-37.54a16 16 0 0 1 26.8 17.36zM903.59 628.26c-7.87 4-37.89 1.23-37.89 1.23s15.64-25.77 23.52-29.74a16 16 0 0 1 14.38 28.51zM888.49 691.22c-7.09 5.24-... (set the log level to DEBUG or TRACE to see the full content) 
- </msg>
-<msg timestamp="20241219 19:06:23.666" level="FAIL">HTTPError: 404 Client Error: Not Found for url: https://practice.expandtesting.com/asdf.jpg</msg>
-<status status="FAIL" starttime="20241219 19:06:23.006" endtime="20241219 19:06:23.670"/>
-</kw>
-<msg timestamp="20241219 19:06:23.670" level="INFO">${response} = ('FAIL', 'HTTPError: 404 Client Error: Not Found for url: https://practice.expandtesting.com/asdf.jpg')</msg>
-<status status="PASS" starttime="20241219 19:06:23.006" endtime="20241219 19:06:23.670"/>
-</kw>
-<kw name="Set Variable" library="BuiltIn">
-<var>${status}</var>
-<arg>${response}[0]</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20241219 19:06:23.671" level="INFO">${status} = FAIL</msg>
-<status status="PASS" starttime="20241219 19:06:23.670" endtime="20241219 19:06:23.671"/>
-</kw>
-<if>
-<branch type="IF" condition="'${status}' == 'FAIL'">
-<kw name="Set Variable" library="BuiltIn">
-<var>${code}</var>
-<arg>404</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20241219 19:06:23.671" level="INFO">${code} = 404</msg>
-<status status="PASS" starttime="20241219 19:06:23.671" endtime="20241219 19:06:23.671"/>
-</kw>
-<status status="PASS" starttime="20241219 19:06:23.671" endtime="20241219 19:06:23.671"/>
-</branch>
-<branch type="ELSE">
-<kw name="Set Variable" library="BuiltIn">
-<var>${code}</var>
-<arg>${response[1].status_code}</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="NOT RUN" starttime="20241219 19:06:23.672" endtime="20241219 19:06:23.672"/>
-</kw>
-<status status="NOT RUN" starttime="20241219 19:06:23.671" endtime="20241219 19:06:23.672"/>
-</branch>
-<status status="PASS" starttime="20241219 19:06:23.671" endtime="20241219 19:06:23.672"/>
-</if>
-<return>
-<value>${code}</value>
-<status status="PASS" starttime="20241219 19:06:23.672" endtime="20241219 19:06:23.672"/>
-</return>
-<msg timestamp="20241219 19:06:23.672" level="INFO">${status_code} = 404</msg>
-<status status="PASS" starttime="20241219 19:06:23.006" endtime="20241219 19:06:23.672"/>
-</kw>
-<kw name="Run Keyword If" library="BuiltIn">
-<arg>${status_code} != ${200}</arg>
-<arg>Append To List</arg>
-<arg>${broken_images}</arg>
-<arg>${src}</arg>
-<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
-<kw name="Append To List" library="Collections">
-<arg>${broken_images}</arg>
-<arg>${src}</arg>
-<doc>Adds ``values`` to the end of ``list``.</doc>
-<status status="PASS" starttime="20241219 19:06:23.673" endtime="20241219 19:06:23.673"/>
-</kw>
-<status status="PASS" starttime="20241219 19:06:23.672" endtime="20241219 19:06:23.673"/>
-</kw>
-<status status="PASS" starttime="20241219 19:06:22.998" endtime="20241219 19:06:23.673"/>
-</iter>
-<iter>
-<var name="${image}">&lt;selenium.webdriver.remote.webelement.WebElement (session="e38eca91fcecda7edeb8b91cd29be0d2", element="f.4FE538D19817585743CB52E64E980397.d.7584E1465D56E59C08A33C5A90C66ED7.e.12")&gt;</var>
-<kw name="Get Element Attribute" library="SeleniumLibrary">
-<var>${src}</var>
-<arg>${image}</arg>
-<arg>src</arg>
-<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
-<msg timestamp="20241219 19:06:23.682" level="INFO">${src} = https://practice.expandtesting.com/hjkl.jpg</msg>
-<status status="PASS" starttime="20241219 19:06:23.673" endtime="20241219 19:06:23.682"/>
-</kw>
-<kw name="Get Image Status Code">
-<var>${status_code}</var>
-<arg>${src}</arg>
-<kw name="Run Keyword And Ignore Error" library="BuiltIn">
-<var>${response}</var>
-<arg>GET</arg>
-<arg>${url}</arg>
-<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
-<kw name="GET" library="RequestsLibrary">
-<arg>${url}</arg>
-<doc>Sends a GET request.</doc>
-<msg timestamp="20241219 19:06:24.180" level="INFO">GET Request : url=https://practice.expandtesting.com/hjkl.jpg 
- path_url=/hjkl.jpg 
- headers={'User-Agent': 'python-requests/2.22.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
- body=None 
- </msg>
-<msg timestamp="20241219 19:06:24.180" level="INFO">GET Response : url=https://practice.expandtesting.com/hjkl.jpg 
- status=404, reason=Not Found 
- headers={'access-control-allow-origin': '*', 'access-control-allow-credentials': 'true', 'access-control-allow-methods': 'GET, POST, PUT, DELETE, PATCH', 'access-control-allow-headers': 'Origin, X-Requested-With, Authorization, Content-Type, Accept, X-Auth-Token', 'content-type': 'text/html; charset=utf-8', 'content-encoding': 'gzip', 'etag': 'W/"66fd-Dpt10iAkrDTQ4mm/NFQbSl75KIo"', 'set-cookie': 'express:sess=eyJmbGFzaCI6e319; path=/; httponly, express:sess.sig=tdt42nQZiQvICqmrvHQ1_16fHk0; path=/; httponly', 'date': 'Thu, 19 Dec 2024 13:36:23 GMT', 'connection': 'keep-alive', 'keep-alive': 'timeout=5', 'transfer-encoding': 'chunked'} 
- body=&lt;!doctype html&gt;
-&lt;html lang="en"&gt;
-
-&lt;head&gt;
-	&lt;meta charset="utf-8"&gt;
-	&lt;meta name=viewport content="width=device-width,initial-scale=1"&gt;
-	&lt;title&gt;404 Page Not Found&lt;/title&gt;
-	&lt;meta name="description"
-		content="Practice Test Automation Website | Free Web UI and REST API Examples"&gt;
-
-	&lt;meta property="og:locale" content="en_US"&gt;
-
-	&lt;meta name="google-adsense-account" content="ca-pub-1056034821646296"&gt;
-	&lt;meta name="msvalidate.01" content="C7DB002AC3EF3CA1AFB65068DA704F2B" /&gt;
-
-	&lt;meta property="og:type" content="article" /&gt;
-	&lt;link rel="canonical" href="https://practice.expandtesting.com/hjkl.jpg" /&gt;
-
-	&lt;meta property="og:title" content="404 Page Not Found"&gt;
-
-
-
-
-	&lt;link rel='shortcut icon' , href='/assets/images/favicon.png' type="image/png"&gt;
-	&lt;link rel="apple-touch-icon" href="/apple-touch-icon.png"&gt;
-
-	&lt;link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"&gt;
-	&lt;link rel='stylesheet' , href='/assets/css/main.css?v=602b88ae'&gt;
-
-	&lt;script src="https://code.jquery.com/jquery-3.6.3.min.js"&gt;&lt;/script&gt;
-	&lt;script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"&gt;&lt;/script&gt;
-	&lt;script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-		crossorigin="anonymous"&gt;&lt;/script&gt;
-
-
-	&lt;!-- Global site tag (gtag.js) - Google Analytics --&gt;
-	&lt;script async src="https://www.googletagmanager.com/gtag/js?id=G-90GRT6N40B"&gt;&lt;/script&gt;
-
-	&lt;script&gt;
-		window.dataLayer = window.dataLayer || [];
-		function gtag() { dataLayer.push(arguments); }
-		gtag('js', new Date());
-		gtag('config', 'G-90GRT6N40B');
-	&lt;/script&gt;
-
-	&lt;!-- Google Ads --&gt;
-
-	&lt;script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1056034821646296"
-		crossorigin="anonymous"&gt;&lt;/script&gt;
-
-
-
-
-	&lt;script type="application/ld+json"&gt;
-		{
-			"@context": "https://schema.org",
-			"@type": "WebPage",
-			"name":  "404 Page Not Found",
-			"inLanguage":"en-US",
-			"url": "https://practice.expandtesting.com/hjkl.jpg",
-			"description": "Practice Test Automation Website | Free Web UI and REST API Examples"
-		}
-	&lt;/script&gt;
-
-
-
-
-&lt;/head&gt;
-
-&lt;body class="d-flex flex-column min-vh-100"&gt;
-
-	
-	&lt;div class="ad-bar"&gt;
-	
-	
-	  &lt;p class="text-center ad-bar-text me-1 ms-1"&gt; The &lt;a href="https://mailstack.expandtesting.com/"&gt;MailStack&lt;/a&gt; Api
-	    (Email Testing) is now available!
-	  &lt;/p&gt;
-	
-	&lt;/div&gt;
-	
-	&lt;div class="horizontal-divider" &lt;/div&gt;&lt;/div&gt;
-	
-	
-	
-	&lt;header class="navbar navbar-expand-md navbar-dark sticky-top main-navbar"&gt;
-	  &lt;nav class="container flex-wrap flex-md-nowrap" aria-label="Main navigation"&gt;
-	    &lt;a class="navbar-brand p-0 me-2 logo_title" href="/" aria-label="SUT"&gt;
-	      &lt;img src="/assets/images/logo.svg"
-	        alt="Best Website for Practice Automation Testing: Free UI and REST API Examples and Apps. Using Cypress, Playwright, Selenium, WebdriverIO and Postman."
-	        width="45" height="45" class="d-block my-1" role="img" /&gt;
-	      &lt;title&gt;SUT&lt;/title&gt;&amp;nbsp;Practice
-	    &lt;/a&gt;
-	
-	    &lt;button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#main-navbar"
-	      aria-controls="main-navbar" aria-expanded="false" aria-label="Toggle navigation"&gt;
-	      &lt;svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" class="bi" fill="currentColor" viewBox="0 0 16 16"&gt;
-	        &lt;path fill-rule="evenodd"
-	          d="M2.5 11.5A.5.5 0 0 1 3 11h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 3 7h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 3 3h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"&gt;
-	        &lt;/path&gt;
-	      &lt;/svg&gt;
-	    &lt;/button&gt;
-	
-	
-	    &lt;div class="navbar-collapse collapse" id="main-navbar"&gt;
-	      &lt;ul class="navbar-nav flex-row flex-wrap pt-2 py-md-0"&gt;
-	
-	
-	
-	        &lt;li class="nav-item dropdown col-6 col-md-auto"&gt;
-	          &lt;a class="nav-link dropdown-toggle" href="/#examples" id="examples-dropdown" role="button"
-	            data-bs-toggle="dropdown" aria-expanded="false"&gt;Demos&lt;/a&gt;
-	          &lt;ul class="dropdown-menu" aria-labelledby="examples-dropdown"&gt;
-	            &lt;li&gt;
-	              &lt;a class="dropdown-item" href="/#examples"&gt;Examples&lt;/a&gt;
-	            &lt;/li&gt;
-	            &lt;li&gt;
-	              &lt;hr class="dropdown-divider"&gt;
-	            &lt;li&gt;
-	              &lt;a class="dropdown-item" href="/#apps"&gt;Apps&lt;/a&gt;
-	            &lt;/li&gt;
-	            &lt;li&gt;
-	              &lt;hr class="dropdown-divider"&gt;
-	            &lt;/li&gt;
-	            &lt;li&gt;&lt;a class="dropdown-item" href="/#api"&gt;APIs&lt;/a&gt;&lt;/li&gt;
-	
-	            &lt;li&gt;
-	              &lt;hr class="dropdown-divider"&gt;
-	            &lt;/li&gt;
-	            &lt;li&gt;&lt;a class="dropdown-item" href="/#assertions"&gt;Assertions&lt;/a&gt;&lt;/li&gt;
-	            &lt;li&gt;
-	              &lt;hr class="dropdown-divider"&gt;
-	            &lt;/li&gt;
-	            &lt;li&gt;&lt;a class="dropdown-item" href="/#reports"&gt;Reports&lt;/a&gt;&lt;/li&gt;
-	
-	          &lt;/ul&gt;
-	        &lt;/li&gt;
-	
-	
-	        &lt;li class="nav-item col-6 col-md-auto"&gt;
-	          &lt;a class="nav-link p-2" href="/#tools"&gt;Tools&lt;/a&gt;
-	        &lt;/li&gt;
-	
-	        &lt;li class=" nav-item col-6 col-md-auto"&gt;
-	          &lt;a class="nav-link p-2" href="/tips"&gt;Automation Tips&lt;/a&gt;
-	        &lt;/li&gt;
-	
-	        &lt;li class="nav-item col-6 col-md-auto"&gt;
-	          &lt;a class="nav-link p-2" href="/test-cases"&gt;Test Cases&lt;/a&gt;
-	        &lt;/li&gt;
-	
-	        &lt;li class="nav-item-border nav-item col-6 col-md-auto"&gt;
-	          &lt;a class="nav-link p-2" href="/notes/api/api-docs/"&gt;API Testing&lt;/a&gt;
-	        &lt;/li&gt;
-	
-	        &lt;li class="nav-item col-6 col-md-auto"&gt;
-	          &lt;a class="nav-link p-2" href="/about"&gt;About&lt;/a&gt;
-	        &lt;/li&gt;
-	
-	        &lt;li class="nav-item col-6 col-md-auto"&gt;
-	          &lt;a class="nav-link p-2" href="/contact"&gt;Contact&lt;/a&gt;
-	        &lt;/li&gt;
-	
-	      &lt;/ul&gt;
-	
-	      &lt;hr class="d-md-none text-white-50" /&gt;
-	
-	      &lt;ul class="navbar-nav flex-row flex-wrap ms-md-auto"&gt;
-	
-	      &lt;/ul&gt;
-	
-	      &lt;a class="btn btn-sut d-lg-inline-block my-2 my-md-0 ms-md-3"
-	        href="https://expandtesting.com/formations/"&gt;Automation Training&lt;/a&gt;
-	    &lt;/div&gt;
-	  &lt;/nav&gt;
-	
-	&lt;/header&gt;
-	&lt;main class="flex-shrink-0 py-3"&gt;
-
-
-		&lt;style&gt;
-		    ins.adsbygoogle[data-ad-status="unfilled"] {
-		        display: none !important;
-		    }
-		&lt;/style&gt;
-		
-		&lt;div class="container-fluid mt-1 mb-3"&gt;
-		    &lt;div class="row"&gt;
-		        &lt;div class="col-12 border"&gt;
-		            &lt;script async
-		                src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1056034821646296"
-		                crossorigin="anonymous"&gt;&lt;/script&gt;
-		            &lt;ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article"
-		                data-ad-format="fluid" data-ad-client="ca-pub-1056034821646296" data-ad-slot="4970212221"&gt;&lt;/ins&gt;
-		            &lt;script&gt;
-		                (adsbygoogle = window.adsbygoogle || []).push({});
-		            &lt;/script&gt;
-		
-		        &lt;/div&gt;
-		    &lt;/div&gt;
-		
-		&lt;/div&gt;
-		&lt;div class='page-layout'&gt;
-  &lt;div class='container'&gt;
-    &lt;div class='page-inner'&gt;
-      &lt;div class='not-available text-center mt-xl-5'&gt;
-        &lt;div class='clearfix fadeInDown animate mb-4'&gt;
-          &lt;svg
-            data-name='Layer 1'
-            width='270'
-            height='200'
-            viewBox='0 0 1097 810'
-            xmlns='http://www.w3.org/2000/svg'
-          &gt;&lt;defs&gt;&lt;linearGradient
-                id='a'
-                x1='588.67'
-                y1='838.15'
-                x2='588.67'
-                y2='115.47'
-                gradientUnits='userSpaceOnUse'
-              &gt;&lt;stop offset='0' stop-color='gray' stop-opacity='.25'&gt;&lt;/stop&gt;&lt;stop
-                  offset='.54'
-                  stop-color='gray'
-                  stop-opacity='.12'
-                &gt;&lt;/stop&gt;&lt;stop offset='1' stop-color='gray' stop-opacity='.1'&gt;&lt;/stop&gt;&lt;/linearGradient&gt;&lt;/defs&gt;&lt;path
-              d='M12.07 429.97c17.36 74.2 54.11 138.34 112.19 169.43 120.7 64.61 392.91 31.29 596.07-7a465.21 465.21 0 0 0 264.54-151.19z'
-              fill='currentcolor'
-              class='text-primary'
-              opacity='.1'
-            &gt;&lt;/path&gt;&lt;path
-              d='M799.31 649.72s-67.65 40.8 57.03 103.59c0 0 27.46-51-2.9-92.57a40.94 40.94 0 0 0-53.12-11.64z'
-              fill='currentcolor'
-              class='text-primary'
-            &gt;&lt;/path&gt;&lt;path
-              d='M800.09 648.86s57.88 44.28 56.25 104.45'
-              fill='none'
-              stroke='#535461'
-              stroke-miterlimit='10'
-            &gt;&lt;/path&gt;&lt;path
-              d='M18.31 661.72s-67.65 40.8 57.03 103.59c0 0 27.46-51-2.9-92.57a40.94 40.94 0 0 0-53.12-11.64z'
-              fill='currentcolor'
-              class='text-primary'
-            &gt;&lt;/path&gt;&lt;path
-              d='M19.09 660.86s57.88 44.28 56.25 104.45'
-              fill='none'
-              stroke='#535461'
-              stroke-miterlimit='10'
-            &gt;&lt;/path&gt;&lt;path
-              d='M859.66 759.08s-21.19-72 4-124.91a113.65 113.65 0 0 0 9.19-71.3 191.13 191.13 0 0 0-10.19-33.46'
-              fill='none'
-              stroke='#535461'
-              stroke-miterlimit='10'
-              stroke-width='2'
-            &gt;&lt;/path&gt;&lt;path
-              d='M878.35 495.95c0 8.82-16 34.39-16 34.39s-16-25.57-16-34.39a16 16 0 0 1 31.93 0zM904.74 544.79c-4.79 7.4-32.09 20.19-32.09 20.19s.5-30.14 5.29-37.54a16 16 0 0 1 26.8 17.36zM903.59 628.26c-7.87 4-37.89 1.23-37.89 1.23s15.64-25.77 23.52-29.74a16 16 0 0 1 14.38 28.51zM888.49 691.22c-7.09 5.24-37.14 7.61-37.14 7.61s11.06-28 18.15-33.29a16 16 0 0 1 19 25.67zM839.12 566.69c6.32 6.14 35.79 12.51 35.79 12.51s-7.22-29.27-13.54-35.41a16 16 0 0 0-22.25 22.9zM822.41 640.54c7.87 4 37.89 1.23 37.89 1.23s-15.64-25.77-23.52-29.74a16 16 0 1 0-14.38 28.51zM816.01 714.55c7.09 5.24 37.14 7.61 37.14 7.61s-11.06-28-18.15-33.29a16 16 0 1 0-19 25.67z'
-              fill='currentcolor'
-              class='text-primary'
-            &gt;&lt;/path&gt;&lt;path
-              d='M878.35 495.95c0 8.82-16 34.39-16 34.39s-16-25.57-16-34.39a16 16 0 0 1 31.93 0zM904.74 544.79c-4.79 7.4-32.09 20.19-32.09 20.19s.5-30.14 5.29-37.54a16 16 0 0 1 26.8 17.36zM903.59 628.26c-7.87 4-37.89 1.23-37.89 1.23s15.64-25.77 23.52-29.74a16 16 0 0 1 14.38 28.51zM888.49 691.22c-7.09 5.24-... (set the log level to DEBUG or TRACE to see the full content) 
- </msg>
-<msg timestamp="20241219 19:06:24.183" level="FAIL">HTTPError: 404 Client Error: Not Found for url: https://practice.expandtesting.com/hjkl.jpg</msg>
-<status status="FAIL" starttime="20241219 19:06:23.683" endtime="20241219 19:06:24.184"/>
-</kw>
-<msg timestamp="20241219 19:06:24.184" level="INFO">${response} = ('FAIL', 'HTTPError: 404 Client Error: Not Found for url: https://practice.expandtesting.com/hjkl.jpg')</msg>
-<status status="PASS" starttime="20241219 19:06:23.683" endtime="20241219 19:06:24.184"/>
-</kw>
-<kw name="Set Variable" library="BuiltIn">
-<var>${status}</var>
-<arg>${response}[0]</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20241219 19:06:24.184" level="INFO">${status} = FAIL</msg>
-<status status="PASS" starttime="20241219 19:06:24.184" endtime="20241219 19:06:24.184"/>
-</kw>
-<if>
-<branch type="IF" condition="'${status}' == 'FAIL'">
-<kw name="Set Variable" library="BuiltIn">
-<var>${code}</var>
-<arg>404</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20241219 19:06:24.185" level="INFO">${code} = 404</msg>
-<status status="PASS" starttime="20241219 19:06:24.185" endtime="20241219 19:06:24.185"/>
-</kw>
-<status status="PASS" starttime="20241219 19:06:24.184" endtime="20241219 19:06:24.185"/>
-</branch>
-<branch type="ELSE">
-<kw name="Set Variable" library="BuiltIn">
-<var>${code}</var>
-<arg>${response[1].status_code}</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="NOT RUN" starttime="20241219 19:06:24.185" endtime="20241219 19:06:24.185"/>
-</kw>
-<status status="NOT RUN" starttime="20241219 19:06:24.185" endtime="20241219 19:06:24.185"/>
-</branch>
-<status status="PASS" starttime="20241219 19:06:24.184" endtime="20241219 19:06:24.185"/>
-</if>
-<return>
-<value>${code}</value>
-<status status="PASS" starttime="20241219 19:06:24.185" endtime="20241219 19:06:24.185"/>
-</return>
-<msg timestamp="20241219 19:06:24.185" level="INFO">${status_code} = 404</msg>
-<status status="PASS" starttime="20241219 19:06:23.682" endtime="20241219 19:06:24.185"/>
-</kw>
-<kw name="Run Keyword If" library="BuiltIn">
-<arg>${status_code} != ${200}</arg>
-<arg>Append To List</arg>
-<arg>${broken_images}</arg>
-<arg>${src}</arg>
-<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
-<kw name="Append To List" library="Collections">
-<arg>${broken_images}</arg>
-<arg>${src}</arg>
-<doc>Adds ``values`` to the end of ``list``.</doc>
-<status status="PASS" starttime="20241219 19:06:24.186" endtime="20241219 19:06:24.186"/>
-</kw>
-<status status="PASS" starttime="20241219 19:06:24.185" endtime="20241219 19:06:24.186"/>
-</kw>
-<status status="PASS" starttime="20241219 19:06:23.673" endtime="20241219 19:06:24.186"/>
-</iter>
-<iter>
-<var name="${image}">&lt;selenium.webdriver.remote.webelement.WebElement (session="e38eca91fcecda7edeb8b91cd29be0d2", element="f.4FE538D19817585743CB52E64E980397.d.7584E1465D56E59C08A33C5A90C66ED7.e.5")&gt;</var>
-<kw name="Get Element Attribute" library="SeleniumLibrary">
-<var>${src}</var>
-<arg>${image}</arg>
-<arg>src</arg>
-<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
-<msg timestamp="20241219 19:06:24.198" level="INFO">${src} = https://practice.expandtesting.com/img/avatar-blank.jpg</msg>
-<status status="PASS" starttime="20241219 19:06:24.187" endtime="20241219 19:06:24.198"/>
-</kw>
-<kw name="Get Image Status Code">
-<var>${status_code}</var>
-<arg>${src}</arg>
-<kw name="Run Keyword And Ignore Error" library="BuiltIn">
-<var>${response}</var>
-<arg>GET</arg>
-<arg>${url}</arg>
-<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
-<kw name="GET" library="RequestsLibrary">
-<arg>${url}</arg>
-<doc>Sends a GET request.</doc>
-<msg timestamp="20241219 19:06:24.619" level="INFO">GET Request : url=https://practice.expandtesting.com/img/avatar-blank.jpg 
- path_url=/img/avatar-blank.jpg 
- headers={'User-Agent': 'python-requests/2.22.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
- body=None 
- </msg>
-<msg timestamp="20241219 19:06:24.627" level="INFO">GET Response : url=https://practice.expandtesting.com/img/avatar-blank.jpg 
- status=200, reason=OK 
- headers={'accept-ranges': 'bytes', 'cache-control': 'public, max-age=0', 'last-modified': 'Tue, 10 Dec 2024 16:37:18 GMT', 'etag': 'W/"9a0-193b16ea230"', 'content-type': 'image/jpeg', 'content-length': '2464', 'date': 'Thu, 19 Dec 2024 13:36:24 GMT', 'connection': 'keep-alive', 'keep-alive': 'timeout=5'} 
- body=����JFIFdd��Duckyd��Adobed����������t	
-	!1A"QaR��B#q2br�3�$��?��                                                                                       wc�ߕuXش]��s�����lc¥UV��;`&amp;�׾��d����u�w�e���x�f�,r==��kq�$�o��D�3�����ƣ?��L������t#��1��Ѳ�q3��JS����/��-"Y��^?`Ĭ'Z\f��r����c�K\`C�V�;�j=vV̖Wb�tu%YVV}A������ӵm��ڊ�&amp;���7��H�\��[���S�$��^&gt;��ދ�b(ĩr��Vf�"���X���p|��j��Ge��2��i{�=�
-���Y�m�H�2���� �٠�Ǘ���ԑʰRΛc��yz��;b�a�k���R=�ڜ}��r��є�ˀ�����������{~'���M�4���WVf��^-�|�ßU\To�}m-���O澑_`�Y�ä�t�Ő}�z��/��v��_&lt;�è�~+������������|g�M�x�`Z��/��(�k�|֭��/zV��&lt;�@@@@@@@�ʮ�����U��eea�+)� ����a׻F�L���v9�s����͆[�v8�!?�n����K;�[���s���3����������:�����]�/ݍ������ƫ���@��         K�����.�a���4��ԟ�{0�� @�P('�;�|��.��]t���&gt;�����&lt;����r5,�#x��1�h&lt;��֥��Ǻ9^}A"�4[�N���np[�c�^Mc��[0��,#��q�[��)=X�o�x�S����I��a�S?':��xx���-�&lt;���o``k���ɺ��koȶˮ��-e��{,c�gv$��:�          N���W-�;���6�!�+��~���a���D`�y�9,D��[+�U�у#����J���A�@��##���������u��j�{,��TEQ�$� R��En�L=sX�{Wc��(s�~�}���
-��ƕo�P�x.�$�������������k~����+TnUo�+��Υ����0K+7��$�Nb��W���@Ư'�R�����]}�P���j*�˶�/����}HU�$A��{�&gt;�@���kqڶuj�����g�c�Ꮛ@ &gt;NU�����ԒB�,@!r�/ĝ�%9�U׸�/�����C��$���Z��}H*�	bY�~(��ƻ����F��t���dY�lqԪe+�=-�qą3��_sԶvj�XƋ�y�j�����b]�ڛ��2�F� c�2�ֶ}�q����"�^�_�F&amp;2�l���SPa��bAb���~���k�k*����d�2B��\Ò���]`�֧��I!��@@@@@@@�;oR�w-M��� �3��"����+��c���HO���`P�����Cs����������n+��c�ʻ&lt;H#�X&gt;���       rD{k�Y��Q���
-����f'��0/��������V�{�J�6�z���][@�1���,y���`         G?%�Z;���jDMֽl�����A�
-�&lt;q��)��
-�� �	��h��.�꺛�j�JY]��K+u`
-�0 ����u�+�.�[�3*���ƶ����kA8�s�߅X6�=U�fˀ�����������O&gt;y�����l*�ao�W�xJ��/�9〧&gt;��ǹ������     l�&gt;�:�L�`:xfdR6{G��궺?�������]^��7:��&gt;W�6f�Ӗ�@ߎ��o*j'�l05�*��q���{T��VV��S�|�1���^?|ZŠ             k��8�wNǭD𦽕��
-���s��~�5ђ���0�w�X+�[���Y���F�.��l�4�Y��.�
-k��p7q��U�v:Lfs�W���c��P�@�` �� 
- </msg>
-<status status="PASS" starttime="20241219 19:06:24.199" endtime="20241219 19:06:24.627"/>
-</kw>
-<msg timestamp="20241219 19:06:24.627" level="INFO">${response} = ('PASS', &lt;Response [200]&gt;)</msg>
-<status status="PASS" starttime="20241219 19:06:24.199" endtime="20241219 19:06:24.627"/>
-</kw>
-<kw name="Set Variable" library="BuiltIn">
-<var>${status}</var>
-<arg>${response}[0]</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20241219 19:06:24.628" level="INFO">${status} = PASS</msg>
-<status status="PASS" starttime="20241219 19:06:24.627" endtime="20241219 19:06:24.628"/>
-</kw>
-<if>
-<branch type="IF" condition="'${status}' == 'FAIL'">
-<kw name="Set Variable" library="BuiltIn">
-<var>${code}</var>
-<arg>404</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="NOT RUN" starttime="20241219 19:06:24.628" endtime="20241219 19:06:24.628"/>
-</kw>
-<status status="NOT RUN" starttime="20241219 19:06:24.628" endtime="20241219 19:06:24.628"/>
-</branch>
-<branch type="ELSE">
-<kw name="Set Variable" library="BuiltIn">
-<var>${code}</var>
-<arg>${response[1].status_code}</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20241219 19:06:24.628" level="INFO">${code} = 200</msg>
-<status status="PASS" starttime="20241219 19:06:24.628" endtime="20241219 19:06:24.628"/>
-</kw>
-<status status="PASS" starttime="20241219 19:06:24.628" endtime="20241219 19:06:24.628"/>
-</branch>
-<status status="PASS" starttime="20241219 19:06:24.628" endtime="20241219 19:06:24.628"/>
-</if>
-<return>
-<value>${code}</value>
-<status status="PASS" starttime="20241219 19:06:24.628" endtime="20241219 19:06:24.628"/>
-</return>
-<msg timestamp="20241219 19:06:24.628" level="INFO">${status_code} = 200</msg>
-<status status="PASS" starttime="20241219 19:06:24.198" endtime="20241219 19:06:24.628"/>
-</kw>
-<kw name="Run Keyword If" library="BuiltIn">
-<arg>${status_code} != ${200}</arg>
-<arg>Append To List</arg>
-<arg>${broken_images}</arg>
-<arg>${src}</arg>
-<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
-<status status="PASS" starttime="20241219 19:06:24.628" endtime="20241219 19:06:24.628"/>
-</kw>
-<status status="PASS" starttime="20241219 19:06:24.187" endtime="20241219 19:06:24.628"/>
-</iter>
-<status status="PASS" starttime="20241219 19:06:21.906" endtime="20241219 19:06:24.628"/>
+<status status="NOT RUN" starttime="20241220 15:56:30.024" endtime="20241220 15:56:30.025"/>
 </for>
 <kw name="Get Length" library="BuiltIn">
 <var>${total_images}</var>
 <arg>${images}</arg>
 <doc>Returns and logs the length of the given item as an integer.</doc>
-<msg timestamp="20241219 19:06:24.629" level="INFO">Length is 4</msg>
-<msg timestamp="20241219 19:06:24.629" level="INFO">${total_images} = 4</msg>
-<status status="PASS" starttime="20241219 19:06:24.628" endtime="20241219 19:06:24.629"/>
+<status status="NOT RUN" starttime="20241220 15:56:30.025" endtime="20241220 15:56:30.025"/>
 </kw>
 <kw name="Log" library="BuiltIn">
 <arg>Total Images: ${total_images}</arg>
 <doc>Logs the given message with the given level.</doc>
-<msg timestamp="20241219 19:06:24.629" level="INFO">Total Images: 4</msg>
-<status status="PASS" starttime="20241219 19:06:24.629" endtime="20241219 19:06:24.629"/>
+<status status="NOT RUN" starttime="20241220 15:56:30.025" endtime="20241220 15:56:30.025"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
 <arg>Total Images: ${total_images}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20241219 19:06:24.629" endtime="20241219 19:06:24.629"/>
+<status status="NOT RUN" starttime="20241220 15:56:30.025" endtime="20241220 15:56:30.025"/>
 </kw>
 <kw name="Get Length" library="BuiltIn">
 <var>${broken_count}</var>
 <arg>${broken_images}</arg>
 <doc>Returns and logs the length of the given item as an integer.</doc>
-<msg timestamp="20241219 19:06:24.629" level="INFO">Length is 2</msg>
-<msg timestamp="20241219 19:06:24.629" level="INFO">${broken_count} = 2</msg>
-<status status="PASS" starttime="20241219 19:06:24.629" endtime="20241219 19:06:24.629"/>
+<status status="NOT RUN" starttime="20241220 15:56:30.025" endtime="20241220 15:56:30.025"/>
 </kw>
 <kw name="Log" library="BuiltIn">
 <arg>Broken Images: ${broken_count}</arg>
 <doc>Logs the given message with the given level.</doc>
-<msg timestamp="20241219 19:06:24.629" level="INFO">Broken Images: 2</msg>
-<status status="PASS" starttime="20241219 19:06:24.629" endtime="20241219 19:06:24.629"/>
+<status status="NOT RUN" starttime="20241220 15:56:30.025" endtime="20241220 15:56:30.025"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
 <arg>Broken Images: ${broken_count}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20241219 19:06:24.629" endtime="20241219 19:06:24.629"/>
+<status status="NOT RUN" starttime="20241220 15:56:30.025" endtime="20241220 15:56:30.025"/>
 </kw>
 <kw name="Run Keyword If" library="BuiltIn">
 <arg>${broken_count} &gt; 0</arg>
 <arg>Log To Console</arg>
 <arg>Broken images found: ${broken_images}</arg>
 <doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
-<kw name="Log To Console" library="BuiltIn">
-<arg>Broken images found: ${broken_images}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20241219 19:06:24.629" endtime="20241219 19:06:24.629"/>
-</kw>
-<status status="PASS" starttime="20241219 19:06:24.629" endtime="20241219 19:06:24.629"/>
+<status status="NOT RUN" starttime="20241220 15:56:30.025" endtime="20241220 15:56:30.025"/>
 </kw>
 <kw name="Close Browser" library="SeleniumLibrary" type="TEARDOWN">
 <doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20241219 19:06:24.629" endtime="20241219 19:06:24.711"/>
+<status status="PASS" starttime="20241220 15:56:30.025" endtime="20241220 15:56:30.094"/>
 </kw>
 <doc>This test case checks all images on the web page for broken links.</doc>
-<status status="PASS" starttime="20241219 19:06:17.447" endtime="20241219 19:06:24.711"/>
+<status status="FAIL" starttime="20241220 15:56:28.189" endtime="20241220 15:56:30.094">InvalidArgumentException: Message: invalid argument
+  (Session info: chrome=131.0.6778.205)
+Stacktrace:
+0   chromedriver                        0x00000001033bb184 cxxbridge1$str$ptr + 3626716
+1   chromedriver                        0x00000001033b39d4 cxxbridge1$str$ptr + 3596076
+2   chromedriver                        0x0000000102e207d8 cxxbridge1$string$len + 88828
+3   chromedriver                        0x0000000102e0b4d8 cxxbridge1$string$len + 2044
+4   chromedriver                        0x0000000102e0a1ac core::str::slice_error_fail::ha0e52dbcb60e6bae + 61996
+5   chromedriver                        0x0000000102e0a2c4 core::str::slice_error_fail::ha0e52dbcb60e6bae + 62276
+6   chromedriver                        0x0000000102e22e6c cxxbridge1$string$len + 98704
+7   chromedriver                        0x0000000102e9eb58 cxxbridge1$string$len + 605820
+8   chromedriver                        0x0000000102e9e5b4 cxxbridge1$strin...
+    [ Message content over the limit has been removed. ]
+...er                        0x0000000102e5a1b8 cxxbridge1$string$len + 324828
+11  chromedriver                        0x00000001033869ac cxxbridge1$str$ptr + 3411716
+12  chromedriver                        0x0000000103389ccc cxxbridge1$str$ptr + 3424804
+13  chromedriver                        0x000000010336d86c cxxbridge1$str$ptr + 3308996
+14  chromedriver                        0x000000010338a58c cxxbridge1$str$ptr + 3427044
+15  chromedriver                        0x000000010335f09c cxxbridge1$str$ptr + 3249652
+16  chromedriver                        0x00000001033a44b8 cxxbridge1$str$ptr + 3533328
+17  chromedriver                        0x00000001033a4634 cxxbridge1$str$ptr + 3533708
+18  chromedriver                        0x00000001033b3648 cxxbridge1$str$ptr + 3595168
+19  libsystem_pthread.dylib             0x00000001958982e4 _pthread_start + 136
+20  libsystem_pthread.dylib             0x00000001958930fc thread_start + 8</status>
 </test>
-<status status="PASS" starttime="20241219 19:06:17.337" endtime="20241219 19:06:24.712"/>
+<status status="FAIL" starttime="20241220 15:56:28.083" endtime="20241220 15:56:30.094"/>
 </suite>
 <statistics>
 <total>
-<stat pass="1" fail="0" skip="0">All Tests</stat>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat pass="1" fail="0" skip="0" id="s1" name="Broken Image">Broken Image</stat>
+<stat pass="0" fail="1" skip="0" id="s1" name="Broken Image">Broken Image</stat>
 </suite>
 </statistics>
 <errors>

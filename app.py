@@ -34,5 +34,5 @@ def run_robot_script(url):
 
 
 if __name__ == "__main__":
-    app.run(host='192.168.1.72', port=5000, debug=True, threaded=False)
-    app.run(debug=True)
+    app.run(port=5000, debug=True, threaded=False)
+
